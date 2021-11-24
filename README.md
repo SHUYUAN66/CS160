@@ -42,18 +42,18 @@ Coding Insertion Sort in the recursive approach allows us realize that the state
 ```
 def dp(arr,n):
     if n>0:
-        if arr[n].sorted != 1: 
+        if arr[n].visited != 1: 
         // if the element in the n position has not been sorted
             dp(arr,n-1) \\ statement A
             if arr[n]>=arr[n-1]:
-                arr[n].sorted = 1
+                arr[n].visited = 1
                 // Mark that we have already sorted element in this position
                 return
         swap(arr,n-1,n)
-        arr[n-1].sorted = 1
+        arr[n-1].visited = 1
         // Mark that we have not sort element in (n-1) position.
         dp(arr,n-1) \\ statement B
-        arr[n].sorted =1
+        arr[n].visited =1
 ```
 As we use botttom up dynamic programming, we can achieve insertion sort faster, since we use memorization to store the solution of the statement B.
 
@@ -64,3 +64,14 @@ During the recursion, there might exist cases that same subproblems are calculat
 We could say that recursion plays important role when we need to break problems into small subproblems. Since some subproblems are called several times during calculation, we use dynamic programming technique to store the solutions of those subproblems so that we do not need to recalculate them.
 
 While this means that dynamic programming is not useful when there's no solutions of subproblems needed again and again. For example, the binary search does not have common subproblems.
+
+### How to Use:
+Run
+'''python3 IS_iteration.py'''
+'''python3 IS_recursion.py'''
+'''python3 IS_DP.py'''
+
+### Reference
+Deepak Abhyankar, Maya Ingle / International Journal of Engineering Research and Applications
+(IJERA)
+ISSN: 2248-9622 www.ijera.com
